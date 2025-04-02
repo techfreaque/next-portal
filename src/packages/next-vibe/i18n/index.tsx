@@ -4,7 +4,7 @@ import { errorLogger } from "next-vibe/shared/utils/logger";
 import type { JSX, ReactNode } from "react";
 import { createContext, useContext, useState } from "react";
 
-import { translations } from "@/app/translations";
+import { translations } from "@/translations";
 
 import type { TranslationKey, TranslationValue } from "./types";
 

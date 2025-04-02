@@ -1,7 +1,7 @@
 /* eslint-disable node/no-process-env */
 import { envClientSchema as portalEnvClientSchema } from "next-vibe/client/env-client";
 import { validateEnv } from "next-vibe/shared/utils/env-util";
-import type { z } from "zod";
+import { z } from "zod";
 
 const isServer = typeof window === "undefined";
 const isReactNative = !isServer && !window.document;
@@ -13,7 +13,9 @@ export const platform = {
   isBrowser,
 };
 
-export const envClientSchema = portalEnvClientSchema.extend({});
+export const envClientSchema = portalEnvClientSchema.extend({
+  NEXT_PUBLIC_GITHUB_URL: z.string(),
+});
 
 export type EnvFrontend = z.infer<typeof envClientSchema>;
 export type EnvFrontendInput = z.input<typeof envClientSchema>;
@@ -29,6 +31,7 @@ export const envClient: EnvFrontend = validateEnv(
     NEXT_PUBLIC_BACKEND_PROD: process.env["NEXT_PUBLIC_BACKEND_PROD"],
     NEXT_PUBLIC_BACKEND_DEV: process.env["NEXT_PUBLIC_BACKEND_DEV"],
     NEXT_PUBLIC_BACKEND_TEST: process.env["NEXT_PUBLIC_BACKEND_TEST"],
+    NEXT_PUBLIC_GITHUB_URL: process.env["NEXT_PUBLIC_GITHUB_URL"],
     platform,
   } as EnvFrontendInput,
   envClientSchema,

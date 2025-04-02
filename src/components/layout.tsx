@@ -4,6 +4,8 @@ import Link from "next/link";
 import { APP_NAME } from "next-vibe/shared/constants";
 import type { JSX, ReactNode } from "react";
 
+import { envClient } from "@/config/env-client";
+
 import { Navbar } from "./navbar";
 
 export function Layout({ children }: { children: ReactNode }): JSX.Element {
@@ -76,7 +78,7 @@ export function Layout({ children }: { children: ReactNode }): JSX.Element {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href="https://github.com/your-repo"
+                    href={envClient.NEXT_PUBLIC_GITHUB_URL}
                     className="text-gray-600 hover:text-primary"
                   >
                     GitHub

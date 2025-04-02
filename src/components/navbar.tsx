@@ -12,14 +12,7 @@ export function Navbar(): JSX.Element {
   return (
     <header className="bg-primary text-primary-foreground sticky top-0 z-50 border-b shadow-sm">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-              <span className="text-primary font-bold text-lg">OE</span>
-            </div>
-            <h1 className="text-2xl font-bold hidden sm:block">{APP_NAME}</h1>
-          </div>
-        </Link>
+        <Logo />
         <nav className="flex items-center space-x-2">
           {!isLoading &&
             (isLoggedIn && user ? (
@@ -61,5 +54,16 @@ export function Navbar(): JSX.Element {
         </nav>
       </div>
     </header>
+  );
+}
+
+function Logo(): JSX.Element {
+  return (
+    <div className="flex items-center space-x-2">
+      <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+        <span className="text-primary font-bold text-lg">nv</span>
+      </div>
+      <h1 className="text-2xl font-bold hidden sm:block">{APP_NAME}</h1>
+    </div>
   );
 }
