@@ -1,6 +1,23 @@
 # Next Query Portal Template
 
+
+
 A comprehensive starter template for building Next.js applications with strongly typed API endpoints, leveraging the next-vibe framework.
+
+## In a nutshell
+
+### API Handling:
+- Next.js API routes are used for the backend
+- Zod schema based api definitions
+- Provide input and output schema and let AI fill the blanks
+- each api automatically provides hooks to mutate or query the data
+- Optionally use the form query and mutation hooks
+- Hooks can then be use accross the code base
+
+### Frontend Handling
+- Code uses the next.js app route scheme
+- Compiles down to a next.js app for web and API's
+- + Also compiles to native apps using expo
 
 ## Overview
 
